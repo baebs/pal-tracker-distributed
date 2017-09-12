@@ -3,10 +3,12 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   host: allocations-pal-bae-sar
   memory: 1G
-  instances: 3
+  instances: 1
   env:
     TRUST_CERTS: api.sys.chicken.pal.pivotal.io
 #    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-bae-sar.apps.longs.pal.pivotal.io
   services:
   - tracker-allocations-database
   - tracker-service-registry
+  - tracker-circuit-breaker-dashboard
+  - tracker-amqp
